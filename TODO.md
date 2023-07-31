@@ -5,34 +5,34 @@
 
     - ## controllers:
         - ### *tutors.ts*
-            - [ ] Logic for route to get all tutors
-            - [ ] Logic for route to create a new tutor
-            - [ ] Logic for route to update a tutor
-            - [ ] Logic for route to delete a tutor
+            - [x] Logic for route to get all tutors
+            - [x] Logic for route to create a new tutor
+            - [x] Logic for route to update a tutor
+            - [x] Logic for route to delete a tutor
 
         - ### *pets.ts*
-            - [ ] Logic for route to create a new pet
-            - [ ] Logic for route to uptade a pet
-            - [ ] Logic for route to delete a pet
+            - [x] Logic for route to create a new pet
+            - [x] Logic for route to uptade a pet
+            - [x] Logic for route to delete a pet
 
     - ## models:
         - ### *tutor.ts*
-            - [ ] Class/ Interface for tutor
+            - [x] Class/ Interface for tutor
 
         - ### *pet.ts*
-            - [ ] Class/ Interface for pet
+            - [x] Class/ Interface for pet
 
     - ## routers:
         - ### *tutorRoutes.ts*
-            - [ ] Route to GET at endpoint /tutors
-            - [ ] Route to POST at endpoint /tutor
-            - [ ] Route to PUT at endpoint /tutor/:id
-            - [ ] Route to DELETE at endpoint /tutor/:id
+            - [x] Route to GET at endpoint /tutors
+            - [x] Route to POST at endpoint /tutor
+            - [x] Route to PUT at endpoint /tutor/:id
+            - [x] Route to DELETE at endpoint /tutor/:id
 
         - ### *petRoutes.ts*
-            - [ ] Route to POST at endpoint /pet/:tutorId
-            - [ ] Route to PUT at endpoint /pet/:petId/tutor/:tutorId
-            - [ ] Route to DELETE at endpoint /pet/:petId/tutor/:tutorId
+            - [x] Route to POST at endpoint /pet/:tutorId
+            - [x] Route to PUT at endpoint /pet/:petId/tutor/:tutorId
+            - [x] Route to DELETE at endpoint /pet/:petId/tutor/:tutorId
 
     - ## dbUtil:
         - ### *dbUtil.ts*
