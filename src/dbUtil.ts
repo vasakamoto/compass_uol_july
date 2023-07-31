@@ -46,3 +46,14 @@ export async function createPet(tutorId: string, pet: models.Pets) {
     await tutorsCollection.updateOne({ id: tutorId }, { $set: { pets: newPetsArray } });
     await client.close();
 }
+
+export async function updatePet(tutorId: string, petId: string, pet: models.Pets) {
+    await client.connect();
+    const tutor = await tutorsCollection.find<models.Tutors>({ id: tutorId }).toArray();
+    let newPetsArray = [...tutor[0].pets];
+    const petIndex = newPetsArray.findIndex((petInArray) => petInArray.id === petId);
+    newPetsArray[petIndex] = pet;
+    console.log(`Tutor: \n${JSON.stringify(tutor[0])} \nPets ${petId}: \n${newPetsArray}`);
+    await tutorsCollection.updateOne({id : tutorId}, {$set: {pets : newPetsArray}})
+    await client.close();
+}

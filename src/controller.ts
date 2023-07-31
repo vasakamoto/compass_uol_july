@@ -75,11 +75,20 @@ export const createPet: RequestHandler = async (req, res) => {
     }
 }
 
-export const updatePet: RequestHandler = (req, res) => {
+export const updatePet: RequestHandler = async (req, res) => {
     try {
-        console.log("Update pet working");
-        res.status(200).send("Everything is ok! For now...");
-
+        if (req.params.petId && req.params.tutorId && (req.body.id || req.body.name
+            || req.body.species || req.body.date_of_birth || req.body.carry || req.body.weight)) {
+            const pet = new models.Pets(req.body.id, req.body.name, req.body.species, req.body.carry,
+                req.body.weight, req.body.date_of_birth);
+            await dbUtils.updatePet(req.params.tutorId, req.params.petId, pet);
+            res.status(200).send(`Pet with id ${req.params.petId}, tutor id ${req.params.tutorId}, updated to:\n
+            ${JSON.stringify(pet, null, 4)}`);
+        }
+        else {
+            console.log("Missing parameters from body");
+            res.status(502).send("Please, insert valid values, to update a tutor!");
+        }
     }
     catch (error) {
         console.log(error)    

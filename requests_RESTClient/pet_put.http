@@ -1,4 +1,4 @@
-PUT http://localhost:3000/pet/:petId/tutor/:tutorId
+PUT http://localhost:3000/pet/id_do_pet/tutor/3
 Content-Type: application/json
 
 {
