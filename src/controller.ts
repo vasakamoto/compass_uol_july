@@ -62,10 +62,13 @@ export const deleteTutor: RequestHandler = async (req, res) => {
     }
 }
 
-export const createPet: RequestHandler = (req, res) => {
+export const createPet: RequestHandler = async (req, res) => {
     try {
-        console.log("Create pet working");
-        res.status(200).send("Everything is ok! For now...");
+        const pet = new models.Pets(req.body.id, req.body.name, req.body.species, req.body.carry,
+        req.body.weight, req.body.date_of_birth);
+        console.log(`Pet acquired from request ${JSON.stringify(pet, null, 4)}`);
+        await dbUtils.createPet(req.params.tutorId, pet);
+        res.status(200).send(`Pet created at tutor with id ${req.params.tutorId}: \n${JSON.stringify(pet, null, 4)}`);
     }
     catch (error) {
         console.log(error)    

@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(routes);
 
-const start =  () => {
+const start = async () => {
     try {
         console.log(`Server is listening at localhost ${process.env.LOCALHOST}`);
         app.listen(process.env.LOCALHOST);
