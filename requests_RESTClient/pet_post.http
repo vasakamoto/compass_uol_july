@@ -1,0 +1,11 @@
+POST http://localhost:3000/pet/:tutorId
+Content-Type: application/json
+
+{
+    "id" : "id_do_pet",
+    "name" : "Cleitin Tavares",
+    "species" : "doguinho",
+    "carry" : "Giga",
+    "weight" : 37,
+    "date_of_birth" : "1993-01-01"
+}

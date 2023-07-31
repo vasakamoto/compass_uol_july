@@ -1,0 +1,11 @@
+POST http://localhost:3000/tutor
+Content-Type: application/json
+
+{
+    "id" : "1",
+    "name" : "Nome do tutor 1",
+    "phone" : "Telefone do tutor 1",
+    "email" : "email do tutor 1",
+    "date_of_birth" :  "Data de nascimento do tutor 1",
+    "zipCode" : "CEP do tutor 1"
+}

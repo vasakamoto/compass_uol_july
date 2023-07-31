@@ -1,0 +1,10 @@
+PUT http://localhost:3000/tutor/:id
+Content-Type: application/json
+
+{
+    "name" : "nome do tutor atualizado",
+    "phone" : "telefone atualizado",
+    "email" : "email atualizado",
+    "date_of_birth" :  "nascimento atualizado",
+    "zipCode" : "CEP atualizado"
+}

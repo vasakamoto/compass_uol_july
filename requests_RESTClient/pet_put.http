@@ -1,0 +1,11 @@
+PUT http://localhost:3000/pet/:petId/tutor/:tutorId
+Content-Type: application/json
+
+{
+    "id" : "id do pet atualizado",
+    "name" : "nome do pet atualizado",
+    "species" : "especie atualizada",
+    "carry" : "tamanho atualizado",
+    "weight" : 7,
+    "date_of_birth" : "nascimento do pet atualizado"
+}
