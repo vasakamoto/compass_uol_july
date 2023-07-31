@@ -51,14 +51,14 @@ export const updateTutor: RequestHandler = async (req, res) => {
     }
 }
 
-export const deleteTutor: RequestHandler = (req, res) => {
+export const deleteTutor: RequestHandler = async (req, res) => {
     try {
         console.log("Delete tutor working");
-        res.status(200).send("Everything is ok! For now...");
-
+        await dbUtils.deleteTutor(req.params.id);
+        res.status(200).send(`Tutor with id ${req.params.id} deleted`);
     }
     catch (error) {
-        console.log(error)    
+        console.log(error);
     }
 }
 
@@ -66,7 +66,6 @@ export const createPet: RequestHandler = (req, res) => {
     try {
         console.log("Create pet working");
         res.status(200).send("Everything is ok! For now...");
-
     }
     catch (error) {
         console.log(error)    

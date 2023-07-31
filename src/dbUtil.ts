@@ -25,9 +25,15 @@ export async function createTutor(tutor: models.Tutors) {
     await client.close();
 }
 
-export async function updateTutor(tutorId: string, update: object){
+export async function updateTutor(tutorId: string, update: object) {
     await client.connect();
     console.log(`Connected to MongoDB, updating id: ${tutorId} update: ${update}`);
     await tutorsCollection.updateOne({ id: tutorId }, { $set: { ...update } });
+    await client.close();
+}
+
+export async function deleteTutor(tutorId: string) {
+    await client.connect();
+    await tutorsCollection.deleteOne({ id: tutorId });
     await client.close();
 }
