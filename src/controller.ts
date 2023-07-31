@@ -1,9 +1,11 @@
-import { RequestHandler } from "express";
+import { RequestHandler } from 'express';
+import * as dbUtils from './dbUtil'
 
-export const getAllTutors: RequestHandler = (req, res) => {
+export const getAllTutors: RequestHandler = async (req, res) => {
 try {
     console.log("Get all tutors working");
-    res.status(200).send("Everything is ok! For now...");
+    const tutorsArray = await dbUtils.getAllDocuments();
+    res.status(200).send(tutorsArray);
 }
 catch (error) {
     console.log(error);    
