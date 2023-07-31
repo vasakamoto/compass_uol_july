@@ -36,12 +36,12 @@
 
     - ## dbUtil:
         - ### *dbUtil.ts*
-            - [ ] Connect to database
+            - [x] Connect to database
             - [ ] Get params or/ and req.body
         
         - ### *dbUtilTutor.ts*
-            - [ ] Create tutor
-            - [ ] Update tutor
+            - [x] Create tutor
+            - [x] Update tutor
             - [ ] Delete tutor
         
         - ### *dbUtilPet.ts*

@@ -15,13 +15,13 @@ catch (error) {
 
 export const createTutor: RequestHandler = async (req, res) => {
     try {
-        if (req.body.name && req.body.phone && req.body.email && req.body.date_of_birth 
+        if (req.body.id, req.body.name && req.body.phone && req.body.email && req.body.date_of_birth 
             && req.body.zipCode) {
             console.log("Create tutor working");
             const newTutor = new models.Tutors(req.body.id, req.body.name, req.body.phone, req.body.email,
                 req.body.date_of_birth, req.body.zipCode);
             await dbUtils.createTutor(newTutor);
-            res.status(200).send(`New tutor created: ${newTutor.name}`);
+            res.status(200).send(`New tutor created:\n ${JSON.stringify(req.body, null, 4)}`);
         }
         else {
             console.log("Missing parameters from body");
@@ -33,10 +33,18 @@ export const createTutor: RequestHandler = async (req, res) => {
     }    
 }
 
-export const updateTutor: RequestHandler = (req, res) => {
+export const updateTutor: RequestHandler = async (req, res) => {
     try {
-        console.log("Update tutor working");
-        res.status(200).send("Everything is ok! For now...");
+        if (req.params.id && (req.body.name || req.body.phone || req.body.email || req.body.date_of_birth
+        || req.body.zipCode)) {
+            console.log("Update tutor working");
+            await dbUtils.updateTutor(req.params.id, { ...req.body });
+            res.status(200).send(`Tutor with id ${req.params.id} updated:\n ${JSON.stringify(req.body, null, 4)}`);
+        }
+        else {
+            console.log("Missing parameters from body");
+            res.status(502).send("Please, insert valid values, to update a tutor!");
+        }
     }
     catch (error) {
         console.log(error);    

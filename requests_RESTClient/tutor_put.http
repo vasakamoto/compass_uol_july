@@ -1,4 +1,4 @@
-PUT http://localhost:3000/tutor/:id
+PUT http://localhost:3000/tutor/6
 Content-Type: application/json
 
 {
