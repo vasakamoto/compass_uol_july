@@ -9,11 +9,18 @@ const tutorsCollection = client.db().collection<models.Tutors>(process.env.MONGO
 export async function getAllDocuments() {
     const tutorsArray = [];
     await client.connect();
-    console.log('Connected to MongoDB, fetching tutors...')
+    console.log("Connected to MongoDB, fetching tutors...")
     const tutors = await tutorsCollection.find().toArray();
     for await (const tutor of tutors) {
         tutorsArray.push(tutor);
     }
     await client.close();
     return tutorsArray;
+}
+
+export async function createTutor(tutor: models.Tutors) {
+    await client.connect();
+    console.log(`Connected to MongoDB, inserting ${tutor.name}`);
+    await tutorsCollection.insertOne(tutor);
+    await client.close();
 }

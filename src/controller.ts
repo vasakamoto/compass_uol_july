@@ -1,5 +1,6 @@
 import { RequestHandler } from 'express';
 import * as dbUtils from './dbUtil'
+import * as models from './models'
 
 export const getAllTutors: RequestHandler = async (req, res) => {
 try {
@@ -12,10 +13,20 @@ catch (error) {
 };
 }
 
-export const createTutor: RequestHandler = (req, res) => {
+export const createTutor: RequestHandler = async (req, res) => {
     try {
-        console.log("Create tutor working");
-        res.status(200).send("Everything is ok! For now...");
+        if (req.body.name && req.body.phone && req.body.email && req.body.date_of_birth 
+            && req.body.zipCode) {
+            console.log("Create tutor working");
+            const newTutor = new models.Tutors(req.body.id, req.body.name, req.body.phone, req.body.email,
+                req.body.date_of_birth, req.body.zipCode);
+            await dbUtils.createTutor(newTutor);
+            res.status(200).send(`New tutor created: ${newTutor.name}`);
+        }
+        else {
+            console.log("Missing parameters from body");
+            res.status(502).send("Please, insert all values, and valid values, to create a tutor!");
+        }
     }
     catch (error) {
         console.log(error);
