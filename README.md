@@ -6,7 +6,7 @@
 
 First challenge from compass uol scholarship program. The objective is to create a proof of concept of a REST api for a veterinary franchise.
 
-The functional requirements are to create routes that are able to take request to:
+The functional requirements are to create routes with *TypeScript(5.1.6)* and *Node.js(18.16.0)* that are able to take request to:
 
 ### Tutor
 - Get all tutors (/tutors)
@@ -40,6 +40,6 @@ The functional requirements are to create routes that are able to take request t
 
 The project didn't require the use of a database, but it helped with the visualization of the requests and was an opportunity to experience it for the first time.
 
- The field `id` was necessary because it was present in the body request of the examples used in the briefing. The `params` e `find` functions uses the `id` field of the body instead of using the `ObjectId` generated automatic with the MongoDB modole.
+The field `id` was necessary because it was present in the body request of the examples used in the briefing. The `params` e `find` functions uses the `id` field of the body instead of using the `ObjectId` generated automatic with the MongoDB modole.
 
- The project was developed with the *REST Client* extension instead of using postman or insomnia to test the request calls.
+The project was developed with the *REST Client* extension instead of using postman or insomnia to test the request calls.
