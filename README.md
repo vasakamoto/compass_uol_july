@@ -38,7 +38,7 @@ The functional requirements are to create routes that are able to take request t
 
 # Others:
 
-The project didn't require the use of a database, but it helped with the visualization of the requests.
+The project didn't require the use of a database, but it helped with the visualization of the requests and was an opportunity to experience it for the first time.
 
  The field `id` was necessary because it was present in the body request of the examples used in the briefing. The `params` e `find` functions uses the `id` field of the body instead of using the `ObjectId` generated automatic with the MongoDB modole.
 
