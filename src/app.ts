@@ -1,11 +1,14 @@
 import express from 'express';
-require('dotenv').config()
+import routes from './routes';
+require('dotenv').config();
+
 
 const app = express();
 
 app.use(express.json());
+app.use(routes);
 
-const start = async () => {
+const start =  () => {
     try {
         console.log(`Server is listening at localhost ${process.env.LOCALHOST}`);
         app.listen(process.env.LOCALHOST);

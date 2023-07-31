@@ -1,13 +1,20 @@
 import express from 'express';
+import * as controller from './controller'
 
 const routes = express.Router();
 
-routes.get('/tutors');
+routes.get('/tutors', controller.getAllTutors);
 
-routes.post('/tutor');
+routes.post('/tutor', controller.createTutor);
 
-routes.route('tutor/:id').put().delete();
+routes.put('/tutor/:id', controller.updateTutor);
 
-routes.post('pet/:tutorId');
+routes.delete('/tutor/:id', controller.deleteTutor);
 
-routes.route('pet/:petId/tutor/:tutorId').put().delete();
+routes.post('/pet/:tutorId', controller.createPet);
+
+routes.put('/pet/:petId/tutor/:tutorId', controller.updatePet);
+
+routes.delete('/pet/:petId/tutor/:tutorId', controller.deletePet);
+
+export default routes;

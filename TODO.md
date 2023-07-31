@@ -55,7 +55,7 @@
 - [x] manage JS packages
 - [x] configure tsconfig
 - [x] .gitignore
-- [ ] REST.http to make/ test request
+- [x] REST.http to make/ test request
 - [ ] Create a local database with arrays
 - [ ] console.log() everything
 
