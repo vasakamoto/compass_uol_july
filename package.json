@@ -1,0 +1,27 @@
+{
+  "name": "compass_uol_july",
+  "version": "1.0.0",
+  "description": "Challenge of july - create a proof of concept of a REST api for a veterinary franchise",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasakamoto/compass_uol_july.git"
+  },
+  "author": "VAS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasakamoto/compass_uol_july/issues"
+  },
+  "homepage": "https://github.com/vasakamoto/compass_uol_july#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
