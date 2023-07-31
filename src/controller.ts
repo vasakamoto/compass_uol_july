@@ -95,11 +95,11 @@ export const updatePet: RequestHandler = async (req, res) => {
     }
 }
 
-export const deletePet: RequestHandler = (req, res) => {
+export const deletePet: RequestHandler = async (req, res) => {
     try {
         console.log("Delete pet working");
-        res.status(200).send("Everything is ok! For now...");
-
+        await dbUtils.deletePet(req.params.tutorId, req.params.petId)
+        res.status(200).send(`Pet with id ${req.params.petId} deleted from tutor ${req.params.tutorId}`);
     }
     catch (error) {
         console.log(error)    

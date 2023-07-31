@@ -57,3 +57,11 @@ export async function updatePet(tutorId: string, petId: string, pet: models.Pets
     await tutorsCollection.updateOne({id : tutorId}, {$set: {pets : newPetsArray}})
     await client.close();
 }
+
+export async function deletePet(tutorId: string, petId: string) {
+    await client.connect();
+    const tutor = await tutorsCollection.find<models.Tutors>({id : tutorId}).toArray();
+    const newPetsArray = [...tutor[0].pets].filter((petInArray) => petInArray.id !== petId)
+    await tutorsCollection.updateOne({id : tutorId}, {$set: {pets : newPetsArray}})
+    await client.close();
+}

@@ -42,16 +42,16 @@
         - ### *dbUtilTutor.ts*
             - [x] Create tutor
             - [x] Update tutor
-            - [ ] Delete tutor
+            - [x] Delete tutor
         
         - ### *dbUtilPet.ts*
-            - [ ] Create pet
-            - [ ] Update pet
-            - [ ] Delete pet
+            - [x] Create pet
+            - [x] Update pet
+            - [x] Delete pet
 
 - # Chores:
 - [ ] README 
-- [ ] .env e .env.dummy
+- [x] .env e .env.dummy
 - [x] manage JS packages
 - [x] configure tsconfig
 - [x] .gitignore
